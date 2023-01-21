@@ -1,4 +1,4 @@
-from Sexto_Proyecto_Funciones import *
+from funciones import *
 
 menu()
 numero = input("Ingrese una opcion: ")

@@ -1,17 +1,17 @@
 from Sexto_Proyecto_Funciones import *
 
 menu()
-numero = int(input("Ingrese una opcion: "))
-while numero not in range(1,7):
-    numero = int(input("Ingrese una opcion Valida: "))
+numero = input("Ingrese una opcion: ")
+while numero not in [str(num) for num in range(1, 7)]:
+    numero = input("Ingrese una opcion: ")
 
-while numero != 6:
-    if numero == 1:
+while numero != "6":
+    if numero == "1":
         limpiar_pantalla()
         mostrar_categorias()
         salto_de_linea()
         categoria = input("Ingrese la categoria a la que quiere acceder: ").capitalize()
-        if Path(path_inicial,categoria).exists():
+        if Path(path_inicial, categoria).exists():
             elegir_categoria(categoria)
             if contar_cantidad_recetas_en_categoria(Path(path_inicial, categoria)) > 0:
                 limpiar_pantalla()
@@ -26,12 +26,12 @@ while numero != 6:
         else:
             salto_de_linea()
             print(f"No existe la categoría {categoria}.")
-    elif numero == 2:
+    elif numero == "2":
         limpiar_pantalla()
         mostrar_categorias()
         salto_de_linea()
         categoria = input("Ingrese la categoria a la que quiere acceder: ").capitalize()
-        if Path(path_inicial,categoria).exists():
+        if Path(path_inicial, categoria).exists():
             elegir_categoria(categoria)
             limpiar_pantalla()
             mostrar_recetas(categoria)
@@ -42,12 +42,12 @@ while numero != 6:
         else:
             salto_de_linea()
             print(f"No existe la categoría {categoria}.")
-    elif numero == 3:
+    elif numero == "3":
         mostrar_categorias()
         salto_de_linea()
         categoria = input("Ingrese la categoria que quiere crear: ").capitalize()
         crear_categoria(categoria)
-    elif numero == 4:
+    elif numero == "4":
         mostrar_categorias()
         salto_de_linea()
         categoria = input("Ingrese la categoria a la que quiere acceder: ").capitalize()
@@ -64,16 +64,16 @@ while numero != 6:
         else:
             salto_de_linea()
             print(f"No existe la categoría {categoria}.")
-    elif numero == 5:
+    elif numero == "5":
         mostrar_categorias()
         categoria = input("Ingrese la categoria que quiere eliminar: ").capitalize()
         eliminar_categoria(categoria)
     input("\n\nPRESIONE ENTER PARA VOLVER AL MENU INICIAL")
     limpiar_pantalla()
     menu()
-    numero = int(input("Ingrese una opcion: "))
-    while numero not in range(1, 7):
-        numero = int(input("Ingrese una opcion Valida: "))
+    numero = input("Ingrese una opcion: ")
+    while numero not in [str(num) for num in range(1, 7)]:
+        numero = input("Ingrese una opcion: ")
 
 
 print("Programa terminado")

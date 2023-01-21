@@ -1,0 +1,6 @@
+1- Elegir categoría y luego receta
+2- Crear archivo dentro de una categoría
+3- Crear categoría
+4- Eliminar receta dentro de una categoría
+5- Eliminar categoría
+6- Salir
